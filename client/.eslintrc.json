@@ -20,8 +20,5 @@
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
-  },
-  "react": {
-    "version": "detect"
   }
 }
