@@ -2,7 +2,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen bg-green-600 text-center text-white">
       <p>Hello World!</p>
     </div>
   );
