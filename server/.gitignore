@@ -1,6 +1,2 @@
-# Compiled javascript files
-dist/
-
 # Node
 node_modules/
-yarn.lock
