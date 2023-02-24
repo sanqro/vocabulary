@@ -28,6 +28,7 @@
 
 ### Informieren
 
+- [Einleitung](#einleitung)
 - [Technologien](#technologien)
 - [Quellen](#quellen)
 - [Anforderungen](#anforderungen)
@@ -56,6 +57,8 @@
 - [Projektauswertung](#projektauswertung)
 
 ## Einleitung
+
+Für dieses Projekt haben wir uns dafür entschieden, dass wir eine kleine Applikation releasieren, bei der man vokabeln in verschiedenen Sprachen lernen kann. Dabei kann man auch eigene Lernsets erstellen, verändern und löschen.
 
 Die Seite ist unter folgender Adresse erreichbar:
 
