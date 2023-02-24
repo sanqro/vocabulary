@@ -1,1 +1,1 @@
-# vocabulary
+# vocabulary documentation
