@@ -116,7 +116,15 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 | Nr. | Frist | Beschreibung | Zeit in Arbeitspaketen (geplant) |
 | --- | ----- | ------------ | :------------------------------- |
-| 1   |       |              |                                  |
+| 1   | 03.02.2023      | Informieren (von IPERKA)              | 10                                 |
+| 2   | 24.06.2023      | Planen (von IPERKA)             | 6                                 |
+| 3   | 24.02.2023      | Entscheiden (von IPERKA)             | 4                                 |
+| 4   | 03.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 1 bis 4 und 17 bis 21            | 10                                 |
+| 5   | 10.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 5 bis 10            | 10                                 |
+| 6   | 17.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 10 bis 16            | 10                                 |
+| 7   | 24.03.2023      | Kontrollieren (von IPERKA)             | 6                                 |
+| 8   | 24.03.2023      | Auswerten (von IPERKA)             | 4                                 |
+| 9   | 31.03.2023      | Portfolioeintrag fertigstellen             | 8                                 |
 
 ## Ausführung
 
