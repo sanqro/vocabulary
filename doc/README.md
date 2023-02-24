@@ -14,21 +14,14 @@
   - [Einleitung](#einleitung)
   - [Technologien](#technologien)
   - [Quellen](#quellen)
-  - [Lokale Entwicklungsumgebung](#lokale-entwicklungsumgebung)
-    - [Füller](#)
   - [Anforderungen](#anforderungen)
   - [Arbeitspakete](#arbeitspakete)
   - [Ausführung](#ausführung)
   - [Testen](#testen)
     - [Testumgebungen](#testumgebungen)
-      - [Füller:](#)
   - [Testfälle](#testfälle)
     - [Testprotokoll](#testprotokoll)
     - [Testbericht](#testbericht)
-  - [Frontend](#frontend)
-    - [Füller](#)
-  - [Backend](#backend)
-    - [Füller](#)
   - [Projektauswertung](#projektauswertung)
 
 ## IPERKA
@@ -76,7 +69,7 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 - [Express](https://expressjs.com/de/)
 - [React](https://reactjs.org)
 - [TypeScript(tsx)](https://www.typescriptlang.org)
-- [Deta](https://www.deta.sh/)
+- [Deta](https://www.deta.space/)
 - [Github mit Workflows](https://docs.github.com/en/actions/using-workflows)
 - [Netlify](https://www.netlify.com/)
 
@@ -86,6 +79,7 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 ## Anforderungen
 
+<<<<<<< HEAD
 
 | Anf.-Nr. | Muss/<br />Kann | funk./<br />qual. | Beschreibung                                                                                                                                                                              |
 | :--------- | :---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,20 +109,18 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 > 1x Arbeitspaket = 45 Minuten (eine Schullektion)
 > 1x Sitzung = 5x Arbeitspakete (ein Halbtag)
-> Arbeitspakete * Sitzungen * Gruppenmitglieder
+> Arbeitspakete _ Sitzungen _ Gruppenmitglieder
 >
-> 5 * 6 * 2 = 60 Arbeitpakete
-
+> 5 _ 6 _ 2 = 60 Arbeitpakete
 
 | Nr. | Frist | Beschreibung | Zeit in Arbeitspaketen (geplant) |
-| ----- | ------- | -------------- | :--------------------------------- |
+| --- | ----- | ------------ | :------------------------------- |
 | 1   |       |              |                                  |
 
 ## Ausführung
 
-
 | Nr. | Frist | Bemerkung | Zeit (geplant) | Zeit (effektiv) |
-| ----- | ------- | ----------- | ---------------- | ----------------- |
+| --- | ----- | --------- | -------------- | --------------- |
 | 1   |       |           |                |                 |
 
 ## Testen
@@ -137,16 +129,14 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 ## Testfälle
 
-
 | Testf.-Nr. | Anf-Nr. | Vorbereitung | Testumgebung | Eingabe | Erw. Ausgabe |
-| :----------: | --------- | :------------- | -------------- | --------- | -------------- |
-|    1.1    |         |              |              |         |              |
+| :--------: | ------- | :----------- | ------------ | ------- | ------------ |
+|    1.1     |         |              |              |         |              |
 
 ### Testprotokoll
 
-
 | Test-Nr | Bericht | Tester |
-| :-------- | :-------- | -------- |
+| :------ | :------ | ------ |
 | 1.1     |         |        |
 
 ### Testbericht
