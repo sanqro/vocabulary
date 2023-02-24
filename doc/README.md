@@ -82,39 +82,37 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 ## Anforderungen
 
-<<<<<<< HEAD
-
 | Anf.-Nr. | Muss/<br />Kann | funk./<br />qual. | Beschreibung                                                                                                                                                                              |
-| :--------- | :---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------- | :-------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1        | Muss            | funk.             | Die Webapplikation soll ein Anmeldungsfeld haben.                                                                                                                                         |
 | 2        | Muss            | funk.             | Die Webapplikation soll ein Registrierungsfeld haben.                                                                                                                                     |
 | 3        | Muss            | funk.             | Die Anmeldung soll funktional sein.                                                                                                                                                       |
 | 4        | Muss            | funk.             | Die Registrierung soll funktional sein.                                                                                                                                                   |
 | 5        | Muss            | funk.             | Man kann ein eigenes Vokabelset erstellen.                                                                                                                                                |
-| 6        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset löschen.                                                                                                                                         |
-| 7        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset bearbeiten.                                                                                                                                       |
-| 8        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset anschauen.                                                                                                                                        |
-| 9        | Muss            | funk.             | Es gibt einen Lernmodus, wo man in Sitzungen, welche 10- 15 Wörter beinhalten, Wörter richtig übersetzen muss.                                                                         |
+| 6        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset löschen.                                                                                                                                           |
+| 7        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset bearbeiten.                                                                                                                                        |
+| 8        | Muss            | funk.             | Man kann die Wörter aus dem Vokabelset anschauen.                                                                                                                                         |
+| 9        | Muss            | funk.             | Es gibt einen Lernmodus, wo man in Sitzungen, welche 10- 15 Wörter beinhalten, Wörter richtig übersetzen muss.                                                                            |
 | 10       | Muss            | funk.             | Im Lernmodus soll auf die Gross- und Kleinschreibung geachtet werden von der Eingabe des Benutzers.                                                                                       |
 | 11       | Muss            | funk.             | Dem Benutzer soll direkt nach der eingabe des Wortes klar sein, ob das Wort richtig oder falsch eingegeben wurde.                                                                         |
 | 12       | Kann            | qual.             | Wenn die Levenshtein-Distanz 1 entspricht soll ein Pop-Up mit dem eingegebenen Wort erscheinen, welches fragt, ob er das Wort richtig eingegeben hat.                                     |
 | 13       | Kann            | qual.             | Wenn das Pop-Up mit Nein beantwortet wird kann man das Wort nochmal eingeben und bei Ja wird dir das richtige Wort und eine Meldund, die klar macht, dass das Wort falsch ist, angezeigt. |
-| 14       | Kann            | qual.             | Nachdem das Wort mit der Lösung verglichen wurde kann man durch einen Knopf zur nächsten Frage gehen.                                                                                   |
-| 15       | Kann            | qual.             | Bei der Eingabe der Wörter kann man auswählen welche Spalte welche Sprache ist.                                                                                                         |
+| 14       | Kann            | qual.             | Nachdem das Wort mit der Lösung verglichen wurde kann man durch einen Knopf zur nächsten Frage gehen.                                                                                     |
+| 15       | Kann            | qual.             | Bei der Eingabe der Wörter kann man auswählen welche Spalte welche Sprache ist.                                                                                                           |
 | 16       | Kann            | qual.             | Man kann einstellen auf welcher Sprache man antworten will.                                                                                                                               |
-| 17       | Muss            | qual.             | Die Passwörter wurden argon2 verschüsselt.                                                                                                                                              |
-| 18        | Muss            | funk.             | Die Daten sollen in Deta Datenbank gespeichert werden.                                                                                                                     |
-| 19        | Muss            | funk.             | Die Daten sollen von der Datenbank geholt werden,die gerade für die Sitzung gebraucht werden.                                                                                                                     |
-| 20        | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesn.                                                                                                                     |
-| 21        | Muss            | funk.             | Wenn man sich registriert wird ein Benutzer erstellt in der Datenbank erstellt.                                                                                                                     |
+| 17       | Muss            | qual.             | Die Passwörter wurden argon2 verschüsselt.                                                                                                                                                |
+| 18       | Muss            | funk.             | Die Daten sollen in Deta Datenbank gespeichert werden.                                                                                                                                    |
+| 19       | Muss            | funk.             | Die Daten sollen von der Datenbank geholt werden,die gerade für die Sitzung gebraucht werden.                                                                                             |
+| 20       | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesn.                                                                                                                   |
+| 21       | Muss            | funk.             | Wenn man sich registriert wird ein Benutzer erstellt in der Datenbank erstellt.                                                                                                           |
 
 ## Arbeitspakete
 
-> 1x Arbeitspaket = 45 Minuten (eine Schullektion)
-> 1x Sitzung = 5x Arbeitspakete (ein Halbtag)
-> Arbeitspakete _ Sitzungen _ Gruppenmitglieder
+> 1x Arbeitspaket = 45 Minuten (eine Schullektion) <br>
+> 1x Sitzung = 5x Arbeitspakete (ein Halbtag) <br>
+> Arbeitspakete \* Sitzungen \* Gruppenmitglieder
 >
-> 5 _ 6 _ 2 = 60 Arbeitpakete
+> 5 \* 6 \* 2 = 60 Arbeitpakete
 
 | Nr. | Frist | Beschreibung | Zeit in Arbeitspaketen (geplant) |
 | --- | ----- | ------------ | :------------------------------- |
