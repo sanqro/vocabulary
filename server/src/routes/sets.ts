@@ -43,4 +43,19 @@ router.post("/create", async (req, res) => {
     }
   });
 
+  router.get("/getSet/:id", async (req, res) => {
+    try {
+      const fetchedVocabularySet = await vocabularySet.get(req.params.id);
+      if (fetchedVocabularySet == null) {
+        res.status(409).json({
+          error: "This vocabulary set does not exist."
+        });
+        return false;
+      } else {
+        res.status(201).json({ fetchedVocabularySet });
+      }
+    }catch (err) {
+      res.status(503).json({ error: err.message });
+    }
+  });
 export default router;
