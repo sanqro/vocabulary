@@ -43,7 +43,7 @@ router.post("/create", async (req, res) => {
     }
   });
 
-  router.get("/getSet/:id", async (req, res) => {
+router.get("/getSet/:id", async (req, res) => {
     try {
       const fetchedVocabularySet = await vocabularySet.get(req.params.id);
       if (fetchedVocabularySet == null) {
@@ -58,4 +58,22 @@ router.post("/create", async (req, res) => {
       res.status(503).json({ error: err.message });
     }
   });
+  
+router.delete("/delete/:id", async (req, res) => {
+    try {
+      const fetchedVocabularySet = await vocabularySet.get(req.params.id);
+      if(fetchedVocabularySet != null) {
+        await vocabularySet.delete(req.params.id);
+        res.status(200).json({ message:"Deleted vocabulary set", id: req.params.id, sucess: true});
+      } else {
+        res.status(409).json({
+          error: "This vocabulary set does not exist."
+        });
+        return false;
+      }
+    }catch (err) {
+      res.status(503).json({ error: err.message });
+    }
+  });
+
 export default router;
