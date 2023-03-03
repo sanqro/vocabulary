@@ -2,6 +2,8 @@
 
 import express from "express";
 import cors from "cors";
+import auth from "./routes/auth";
+import sets from "./routes/sets";
 
 const app = express();
 app.use(express.json()); 
@@ -12,6 +14,12 @@ app.get("/", (req, res) =>
     msg: "This is the API of the following repository on GithHub: https://github.com/sanqro/vocabulary"
   })
 );
+
+
+// routes
+app.use("/auth", auth);
+app.use("/sets", sets);
+
 
 // Listen on port 3000 if running locally
 if (!process.env.DETA_RUNTIME) {
