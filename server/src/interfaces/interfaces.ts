@@ -4,6 +4,7 @@ export interface IAuthForm {
 }
 
 export interface IVocabularySet {
+    oldKey?: string;
     key?: string;
     title: string;
     creator: string;

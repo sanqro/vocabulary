@@ -76,4 +76,36 @@ router.delete("/delete/:id", async (req, res) => {
     }
   });
 
+router.post("/update", async (req, res) => {
+    try {
+      const vocabularySetData: IVocabularySet = req.body as IVocabularySet;
+
+      if (!(await vocabularySet.get(req.body.oldKey))) {
+        throw new Error("This vocabulary set does not exist.");
+      }
+
+      const vocabularySetDataJson = {
+        key: vocabularySetData.title + vocabularySetData.creator,
+        title: vocabularySetData.title,
+        creator: vocabularySetData.creator,
+        terms: vocabularySetData.terms,
+        definitions: vocabularySetData.definitions
+      };
+      
+      // delete the old set because if the title updates the key also does and the key cant be updated
+      const oldVocabularySet = await vocabularySet.delete(req.body.oldKey);
+      const newVocabularySet = await vocabularySet.insert(vocabularySetDataJson);
+
+      res.status(201).json({
+        title: vocabularySetDataJson.title,
+        creator: vocabularySetDataJson.creator,
+        terms: vocabularySetDataJson.terms,
+        definitions: vocabularySetDataJson.definitions,
+        success: true
+      });
+    } catch (err) {
+      res.status(503).json({ error: err.message });
+    }
+  });
+
 export default router;
