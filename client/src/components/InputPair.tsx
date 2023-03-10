@@ -4,20 +4,21 @@ import OnClickButton from "./OnClickButton";
 import InputWord from "./InputWord";
 
 function AddVocabulary(Vocabulary: IVocabularyInput) {
-  fetch("http://localhost:3000/sets/create", {
+  console.log("add vocabset");
+  /*   fetch("http://localhost:3000/sets/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: sessionStorage.getItem("jwt") as string
     },
     body: JSON.stringify({
-      key: "32sandro",
-      title: "2",
-      creator: "sandro",
+      key: //
+      title: //
+      creator: //
       terms: Vocabulary.term,
       definitions: Vocabulary.definition
     })
-  });
+  }); */
 }
 
 const InputPair = () => {
@@ -68,7 +69,7 @@ const InputPair = () => {
       <OnClickButton
         onClick={handleCreateVocabulary}
         label="Vokabularset erstellen"
-        className="py-2 px-4 text-white rounded mx-10% bg-green-500"
+        className="py-2 px-4 text-white rounded mx-10% bg-green-500 float-right"
       />
     </div>
   );

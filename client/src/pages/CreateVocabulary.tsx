@@ -12,8 +12,17 @@ function createVocabulary() {
         <LinkButton destination="/Edit">Edit Vocabulary</LinkButton>
       </header>
       <main id="body">
-        <h1 id="title">Titel:</h1>
-        <input type="text" id="titleInput" className="border border-black" />
+        <div className="flex flex-col w-full max-w-md mx-auto mb-4">
+          <h1 id="title" className="">
+            Titel:
+          </h1>
+          <input
+            type="text"
+            id="titleInput"
+            className="w-full border rounded-md px-3 py-2"
+            placeholder="Titel"
+          />
+        </div>
         <InputPair />
       </main>
       <footer className="fixed bottom-0 w-full bg-gray-200 py-4 p-0" id="footer">
