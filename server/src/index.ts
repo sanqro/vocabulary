@@ -4,10 +4,11 @@ import express from "express";
 import cors from "cors";
 import auth from "./routes/auth";
 import sets from "./routes/sets";
+import authState from "./middleware/authState";
 
 const app = express();
-app.use(express.json()); 
-app.use(cors()); 
+app.use(express.json());
+app.use(cors());
 app.disable("etag");
 
 app.get("/", (req, res) =>
@@ -16,11 +17,9 @@ app.get("/", (req, res) =>
   })
 );
 
-
 // routes
 app.use("/auth", auth);
-app.use("/sets", sets);
-
+app.use("/sets", authState, sets);
 
 // Listen on port 3000 if running locally
 if (!process.env.DETA_RUNTIME) {
