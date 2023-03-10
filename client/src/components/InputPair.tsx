@@ -5,6 +5,8 @@ import InputWord from "./InputWord";
 
 function AddVocabulary(Vocabulary: IVocabularyInput) {
   console.log("add vocabset");
+  console.log(Vocabulary.definition);
+  console.log(Vocabulary.term);
   /*   fetch("http://localhost:3000/sets/create", {
     method: "POST",
     headers: {
@@ -39,8 +41,8 @@ const InputPair = () => {
       definition: pairs.map((pair) => pair.definition[0]),
       term: pairs.map((pair) => pair.term[0])
     };
-    AddVocabulary(Vocabulary);
     console.log(Vocabulary);
+    AddVocabulary(Vocabulary);
   };
 
   return (
@@ -51,7 +53,7 @@ const InputPair = () => {
             type="text"
             placeholder="Begriff"
             value={pair.definition[0]}
-            onChange={(e) => handleChange(index, "definition", e.target.value)}
+            onChange={(e) => handleChange(index, "term", e.target.value)}
           />
           <InputWord
             type="text"
