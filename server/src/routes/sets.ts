@@ -13,7 +13,7 @@ const vocabularySet = deta.Base("vocabulary-sets");
 
 const router = express.Router();
 
-router.post("/create", checkUser, async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
     const vocabularySetData: IVocabularySet = req.body as IVocabularySet;
 
@@ -54,6 +54,16 @@ router.get("/getSet/:id", async (req, res) => {
     } else {
       res.status(201).json({ fetchedVocabularySet });
     }
+  } catch (err) {
+    res.status(503).json({ error: err.message });
+  }
+});
+
+router.get("/getAll", async (req, res) => {
+  try {
+    const fetchedVocabularySets = await vocabularySet.fetch();
+    console.log(await vocabularySet.fetch());
+    res.status(201).json({ fetchedVocabularySets });
   } catch (err) {
     res.status(503).json({ error: err.message });
   }
