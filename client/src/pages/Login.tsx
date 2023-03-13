@@ -1,7 +1,12 @@
 import React from "react";
+import LoginField from "../components/LoginField";
 
 function Login() {
-  return <div>login</div>;
+  return (
+    <main>
+      <LoginField />
+    </main>
+  );
 }
 
 export default Login;
