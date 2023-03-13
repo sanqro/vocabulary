@@ -1,36 +1,41 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import OnClickButton from "./OnClickButton";
 
-const submitLogin = async() => {
-  const username = (document.getElementById("username") as HTMLInputElement).value as string;
-  const password = (document.getElementById("password") as HTMLInputElement).value as string;
-
-  if (username == "" || password == "") {
-    alert("Please provide your password and username!");
-    return false;
-  }
-
-  const login = await fetch("http://localhost:3000/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      username: username,
-      password: password
-    })
-  });
-
-  const response = await login.json();
-  if (await response.success) {
-    sessionStorage.setItem("user", username);
-    sessionStorage.setItem("token", response.token);
-  } else {
-    alert("There was an error: " + response.error);
-  }
-};
-
 function LoginField() {
+
+  const nav = useNavigate();
+
+  const submitLogin = async() => {
+    const username = (document.getElementById("username") as HTMLInputElement).value as string;
+    const password = (document.getElementById("password") as HTMLInputElement).value as string;
+  
+    if (username == "" || password == "") {
+      alert("Please provide your password and username!");
+      return false;
+    }
+  
+    const login = await fetch("http://localhost:3000/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      })
+    });
+  
+    const response = await login.json();
+    if (await response.success) {
+      sessionStorage.setItem("user", username);
+      sessionStorage.setItem("token", response.token);
+      nav("/");
+    } else {
+      alert("There was an error: " + response.error);
+    }
+  };
+  
   return(
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col items-center rounded-md py-8 px-10 w-1/4">
