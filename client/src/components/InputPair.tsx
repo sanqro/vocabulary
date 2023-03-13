@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { IVocabularyInput } from "../interfaces/props";
 import OnClickButton from "./OnClickButton";
