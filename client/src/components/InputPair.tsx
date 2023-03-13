@@ -9,7 +9,7 @@ function AddVocabulary(Vocabulary: IVocabularyInput) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: sessionStorage.getItem("jwt") as string
+      Authorization: sessionStorage.getItem("token") as string
     },
     body: JSON.stringify({
       title: (document.getElementById("titleInput") as HTMLInputElement).value,
