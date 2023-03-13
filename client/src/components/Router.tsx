@@ -7,6 +7,7 @@ import NotFound from "../pages/NotFound";
 import ViewVocabulary from "../pages/ViewVocabulary";
 import CreateVocabulary from "../pages/CreateVocabulary";
 import EditVocabulary from "../pages/EditVocabulary";
+import LearnVocabulary from "../pages/LearnVocabulary";
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
         <Route path="*" element={<NotFound />} />
         <Route path="Create" element={<CreateVocabulary />} />
         <Route path="Edit" element={<EditVocabulary />} />
+        <Route path="Learn" element={<LearnVocabulary />} />
       </Routes>
     </BrowserRouter>
   );

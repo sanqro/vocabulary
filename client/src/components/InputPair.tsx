@@ -4,23 +4,40 @@ import OnClickButton from "./OnClickButton";
 import InputWord from "./InputWord";
 
 function AddVocabulary(Vocabulary: IVocabularyInput) {
-  console.log("add vocabset");
-  console.log(Vocabulary.definition);
-  console.log(Vocabulary.term);
-  /*   fetch("http://localhost:3000/sets/create", {
+  fetch("http://localhost:3000/sets/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: sessionStorage.getItem("jwt") as string
     },
     body: JSON.stringify({
-      key: //
-      title: //
-      creator: //
+      title: (document.getElementById("titleInput") as HTMLInputElement).value,
+      creator: sessionStorage.getItem("user"),
       terms: Vocabulary.term,
       definitions: Vocabulary.definition
     })
-  }); */
+  });
+}
+
+function checkWords(Vocabulary: IVocabularyInput) {
+  let pipi = 0;
+  for (let i = 0; i < Vocabulary.term.length; i++) {
+    if (Vocabulary.term[i] === "" || Vocabulary.term[i] === " ") {
+      console.log("you are dumb term");
+      alert("There is a term which has nothing or a space in it");
+      pipi = 1;
+    }
+  }
+  for (let i = 0; i < Vocabulary.definition.length; i++) {
+    if (Vocabulary.definition[i] === "" || Vocabulary.definition[i] === " ") {
+      console.log("you are dumb definition");
+      alert("There is a definition which has nothing or a space in it");
+      pipi = 1;
+    }
+  }
+  if (pipi == 0) {
+    AddVocabulary(Vocabulary);
+  }
 }
 
 const InputPair = () => {
@@ -41,8 +58,7 @@ const InputPair = () => {
       definition: pairs.map((pair) => pair.definition[0]),
       term: pairs.map((pair) => pair.term[0])
     };
-    console.log(Vocabulary);
-    AddVocabulary(Vocabulary);
+    checkWords(Vocabulary);
   };
 
   return (

@@ -10,6 +10,7 @@ function createVocabulary() {
         <LinkButton destination="/viewVocabulary">View Vocabulary</LinkButton>
         <LinkButton destination="/Create">Create Vocabulary</LinkButton>
         <LinkButton destination="/Edit">Edit Vocabulary</LinkButton>
+        <LinkButton destination="/Learn">Learn Vocabulary</LinkButton>
       </header>
       <main id="body">
         <div className="flex flex-col w-full max-w-md mx-auto mb-4">
