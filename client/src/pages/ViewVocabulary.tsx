@@ -1,7 +1,7 @@
 import React from "react";
 
 function viewVocabulary() {
-  return <div id="hi">ok</div>;
+  return <div>viewVocabulary</div>;
 }
 
 export default viewVocabulary;

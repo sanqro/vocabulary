@@ -23,14 +23,12 @@ function checkWords(Vocabulary: IVocabularyInput) {
   let pipi = 0;
   for (let i = 0; i < Vocabulary.term.length; i++) {
     if (Vocabulary.term[i] === "" || Vocabulary.term[i] === " ") {
-      console.log("you are dumb term");
       alert("There is a term which has nothing or a space in it");
       pipi = 1;
     }
   }
   for (let i = 0; i < Vocabulary.definition.length; i++) {
     if (Vocabulary.definition[i] === "" || Vocabulary.definition[i] === " ") {
-      console.log("you are dumb definition");
       alert("There is a definition which has nothing or a space in it");
       pipi = 1;
     }

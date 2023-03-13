@@ -3,7 +3,7 @@ import LinkButton from "../components/LinkButton";
 import Footer from "../components/Footer";
 
 function startLearn() {
-  console.log("pipi");
+  alert("You are learning now");
 }
 
 function LearnVocabulary() {

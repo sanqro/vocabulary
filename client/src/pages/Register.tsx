@@ -1,7 +1,7 @@
 import React from "react";
 
 function register() {
-  return <div id="hi">oki doki registrer</div>;
+  return <div>register</div>;
 }
 
 export default register;

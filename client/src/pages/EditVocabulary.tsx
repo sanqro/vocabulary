@@ -1,7 +1,7 @@
 import React from "react";
 
 function editVocabulary() {
-  return <div id="hi">hipeti hopeti</div>;
+  return <div>editVocabulary</div>;
 }
 
 export default editVocabulary;
