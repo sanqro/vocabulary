@@ -11,13 +11,33 @@ function AddVocabulary(Vocabulary: IVocabularyInput) {
       Authorization: sessionStorage.getItem("jwt") as string
     },
     body: JSON.stringify({
-      key: "32sandro",
-      title: "2",
-      creator: "sandro",
+      title: (document.getElementById("titleInput") as HTMLInputElement).value,
+      creator: sessionStorage.getItem("user"),
       terms: Vocabulary.term,
       definitions: Vocabulary.definition
     })
   });
+}
+
+function checkWords(Vocabulary: IVocabularyInput) {
+  let pipi = 0;
+  for (let i = 0; i < Vocabulary.term.length; i++) {
+    if (Vocabulary.term[i] === "" || Vocabulary.term[i] === " ") {
+      console.log("you are dumb term");
+      alert("There is a term which has nothing or a space in it");
+      pipi = 1;
+    }
+  }
+  for (let i = 0; i < Vocabulary.definition.length; i++) {
+    if (Vocabulary.definition[i] === "" || Vocabulary.definition[i] === " ") {
+      console.log("you are dumb definition");
+      alert("There is a definition which has nothing or a space in it");
+      pipi = 1;
+    }
+  }
+  if (pipi == 0) {
+    AddVocabulary(Vocabulary);
+  }
 }
 
 const InputPair = () => {
@@ -38,8 +58,7 @@ const InputPair = () => {
       definition: pairs.map((pair) => pair.definition[0]),
       term: pairs.map((pair) => pair.term[0])
     };
-    AddVocabulary(Vocabulary);
-    console.log(Vocabulary);
+    checkWords(Vocabulary);
   };
 
   return (
@@ -50,7 +69,7 @@ const InputPair = () => {
             type="text"
             placeholder="Begriff"
             value={pair.definition[0]}
-            onChange={(e) => handleChange(index, "definition", e.target.value)}
+            onChange={(e) => handleChange(index, "term", e.target.value)}
           />
           <InputWord
             type="text"
@@ -68,7 +87,7 @@ const InputPair = () => {
       <OnClickButton
         onClick={handleCreateVocabulary}
         label="Vokabularset erstellen"
-        className="py-2 px-4 text-white rounded mx-10% bg-green-500"
+        className="py-2 px-4 text-white rounded mx-10% bg-green-500 float-right"
       />
     </div>
   );
