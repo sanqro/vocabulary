@@ -17,24 +17,36 @@ function AddVocabulary(Vocabulary: IVocabularyInput) {
       terms: Vocabulary.term,
       definitions: Vocabulary.definition
     })
+  }).then(() => {
+    alert("Your Vocabulary has been added successfully");
   });
 }
 
 function checkWords(Vocabulary: IVocabularyInput) {
-  let pipi = 0;
+  let termboolean = false;
+  let defenitionboolean = false;
   for (let i = 0; i < Vocabulary.term.length; i++) {
     if (Vocabulary.term[i] === "" || Vocabulary.term[i] === " ") {
-      alert("There is a term which has nothing or a space in it");
-      pipi = 1;
+      termboolean = true;
     }
   }
   for (let i = 0; i < Vocabulary.definition.length; i++) {
     if (Vocabulary.definition[i] === "" || Vocabulary.definition[i] === " ") {
-      alert("There is a definition which has nothing or a space in it");
-      pipi = 1;
+      defenitionboolean = true;
     }
   }
-  if (pipi == 0) {
+  if (
+    (document.getElementById("titleInput") as HTMLInputElement).value == "" ||
+    (document.getElementById("titleInput") as HTMLInputElement).value == " "
+  ) {
+    alert("The vocabulary doesn't have a title");
+  } else if (Vocabulary.term.length == 0) {
+    alert("There are no words in the vocabulary");
+  } else if (termboolean == true) {
+    alert("There is a term which has nothing or a space in it");
+  } else if (defenitionboolean == true) {
+    alert("There is a definition which has nothing or a space in it");
+  } else if (defenitionboolean == false && termboolean == false) {
     AddVocabulary(Vocabulary);
   }
 }
