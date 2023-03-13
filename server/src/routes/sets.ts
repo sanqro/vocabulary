@@ -102,8 +102,8 @@ router.post("/update", checkUser, async (req, res) => {
     };
 
     // delete the old set because if the title updates the key also does and the key cant be updated
-    const oldVocabularySet = await vocabularySet.delete(req.body.oldKey);
-    const newVocabularySet = await vocabularySet.insert(vocabularySetDataJson);
+    await vocabularySet.delete(req.body.oldKey);
+    await vocabularySet.insert(vocabularySetDataJson);
 
     res.status(201).json({
       title: vocabularySetDataJson.title,
