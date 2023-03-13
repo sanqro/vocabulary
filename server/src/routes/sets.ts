@@ -62,7 +62,6 @@ router.get("/getSet/:id", async (req, res) => {
 router.get("/getAll", async (req, res) => {
   try {
     const fetchedVocabularySets = await vocabularySet.fetch();
-    console.log(await vocabularySet.fetch());
     res.status(201).json({ fetchedVocabularySets });
   } catch (err) {
     res.status(503).json({ error: err.message });
