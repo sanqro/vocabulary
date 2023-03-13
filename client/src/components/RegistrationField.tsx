@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import OnClickButton from "./OnClickButton";
 
 function RegistrationField() {
+  const nav = useNavigate();
+
   const submitRegister = async() => {
 
     const username = (document.getElementById("username") as HTMLInputElement).value as string;
@@ -25,6 +28,7 @@ function RegistrationField() {
     const response = await register.json();
     if (await response.success) {
       alert(`You registered successfully as ${username}`);
+      nav("/login");
     } else {
       alert("There was an error: " + response.error);
     }
