@@ -1,7 +1,12 @@
 import React from "react";
+import RegistrationField from "../components/RegistrationField";
 
 function register() {
-  return <div id="hi">oki doki registrer</div>;
+  return (
+    <main>
+      <RegistrationField />
+    </main>
+  );
 }
 
 export default register;
