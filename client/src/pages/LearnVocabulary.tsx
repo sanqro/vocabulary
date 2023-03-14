@@ -8,7 +8,7 @@ function startLearn() {
 
 function LearnVocabulary() {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <header className="bg-gray-200 py-4 flex flex-row justify-center items-center">
         <LinkButton destination="/viewVocabulary">View Vocabulary</LinkButton>
         <LinkButton destination="/Create">Create Vocabulary</LinkButton>
@@ -23,10 +23,8 @@ function LearnVocabulary() {
           Start
         </button>
       </main>
-      <footer className="fixed bottom-0 w-full bg-gray-200 py-4 p-0" id="footer">
-        <Footer></Footer>
-      </footer>
-    </>
+      <Footer></Footer>
+    </div>
   );
 }
 
