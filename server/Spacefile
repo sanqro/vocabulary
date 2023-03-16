@@ -8,3 +8,5 @@ micros:
     include:
       - dist
     run: "node --no-warnings dist/index.js"
+    public_routes:
+      - "/*"
