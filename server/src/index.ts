@@ -13,7 +13,7 @@ app.disable("etag");
 
 app.get("/", (req, res) =>
   res.status(200).json({
-    msg: "test: https://github.com/sanqro/vocabulary"
+    msg: "This is the API of the following repository on GitHub: https://github.com/sanqro/vocabulary"
   })
 );
 
