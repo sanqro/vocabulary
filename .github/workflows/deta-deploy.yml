@@ -1,19 +1,19 @@
-name: "Deploy to Deta"
+name: Push to Space
 on:
-    push:
-        paths:
-            - "server/**"
-    pull_request:
-        branches: ["master"]
-        
+  push:
+    paths:
+      - "server/**"
+  pull_request:
+    branches: ["master"]
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2 #Be sure you check-out the repo first. Deta CLI needs access to the files
-            - uses: BogDAAAMN/deta-deploy-action@v1.0.1 # CREATOR
-              with:
-                  deta-access-token: ${{ secrets.DETA_ACCESS_TOKEN }} #Deta access token https://docs.deta.sh/docs/cli/auth
-                  deta-name: "server" #Deta Micro name https://docs.deta.sh/docs/cli/commands/#deta-clone
-                  deta-project: "vocabulary" #Optional: Deta project name https://docs.deta.sh/docs/cli/commands/#deta-clone
-                  deta-project-dir: "server" #Optional: directory to be deployed on Deta. Default is the root "."
+  push-to-space:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deta Space Deployment Github Action
+        uses: neobrains/space-deployment-github-action@v0.3
+        with:
+          access_token: ${{ secrets.ACCESS_TOKEN }}
+          project_id: ${{ secrets.PROJECT_ID }}
+          space_push: true
+          list_on_discovery: true
