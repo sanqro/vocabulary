@@ -13,7 +13,7 @@ app.disable("etag");
 
 app.get("/", (req, res) =>
   res.status(200).json({
-    msg: "This is the API of the following repository on GithHub: https://github.com/sanqro/vocabulary"
+    msg: "test: https://github.com/sanqro/vocabulary"
   })
 );
 
@@ -23,7 +23,7 @@ app.use("/sets", authState, sets);
 
 const port = parseInt(process.env.PORT) || 8080;
 app.listen(port, () => {
-  console.log(`running on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
 
 module.exports = app;
