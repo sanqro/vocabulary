@@ -1,1 +1,0 @@
-{"id":"8f4d952b-ab33-4624-a2b3-01e080f7b783","space":40163,"runtime":"nodejs14.x","name":"server","path":"7wwsbw","project":"a0wlvefr","account":"144798365827","region":"eu-central-1","deps":["express@^4.18.1"],"envs":null,"public":true,"log_level":"debug","cron":""}
