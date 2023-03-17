@@ -1,0 +1,12 @@
+v: 0
+micros:
+  - name: vocabulary1304
+    src: .
+    engine: nodejs16
+    commands:
+      - npm run build
+    include:
+      - dist
+    run: "node --no-warnings dist/index.js"
+    public_routes:
+      - "/*"
