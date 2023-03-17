@@ -3,6 +3,20 @@ export interface ILinkButton {
     children: string;
 }
 
+export interface IVocabularySet {
+    oldKey?: string;
+    key?: string;
+    title?: string;
+    creator?: string;
+    terms?: string[];
+    definitions?: string[];
+}
+
+export interface IFetchedVocabularySets {
+    items: IVocabularySet[];
+    count: number;
+  }
+
 export interface IOnClickButton {
     onClick: () => void;
     label: string;
@@ -19,4 +33,8 @@ export interface IInputWord {
     placeholder?: string;
     value: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface IEditView {
+    children: string;
 }
