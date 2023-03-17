@@ -45,11 +45,12 @@ router.post("/login", async (req, res) => {
     const authFormData: IAuthForm = req.body as IAuthForm;
 
     const user = await auth.get(authFormData.username);
-    const password = user.password as string;
 
     if (user === null) {
       throw new Error("This user does not exist. Please register before trying to log in");
     }
+
+    const password = user.password as string;
 
     if (await argon2.verify(password, authFormData.password)) {
       const token = jwt.sign({ username: user.key }, jwtSecret, { expiresIn: "21600s" });
