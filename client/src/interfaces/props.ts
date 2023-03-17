@@ -12,6 +12,14 @@ export interface IVocabularySet {
     definitions?: string[];
 }
 
+export interface IVocabularySetNoUdefined {
+    creator: string;
+    definitions: string[];
+    key: string;
+    terms: string[];
+    title: string;
+  }
+
 export interface IFetchedVocabularySets {
     items: IVocabularySet[];
     count: number;
