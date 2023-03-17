@@ -68,6 +68,16 @@ router.get("/getAll", async (req, res) => {
   }
 });
 
+router.get("/getAll/:creator", async (req, res) => {
+  try {
+    const creator = req.params.creator;
+    const fetchedVocabularySets = await vocabularySet.fetch({ creator: req.params.creator });
+    res.status(200).json({ fetchedVocabularySets });
+  } catch (err) {
+    res.status(503).json({ error: err.message });
+  }
+});
+
 router.delete("/delete/:id", checkUser, async (req, res) => {
   try {
     const fetchedVocabularySet = await vocabularySet.get(req.params.id);
