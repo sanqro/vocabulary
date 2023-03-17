@@ -11,7 +11,8 @@ const edit: React.FC = () => {
 
   useEffect(() => {
     const fetchVocabList = async () => {
-      const response = await fetch("http://localhost:3000/sets/getAll", {
+      const user = sessionStorage.getItem("user");
+      const response = await fetch(`http://localhost:3000/sets/getAll/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
