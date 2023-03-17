@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { IFetchedVocabularySets } from "../interfaces/props";
+import OnClickButton from "./OnClickButton";
+
+function fornow() {
+  console.log("hi");
+}
 
 const edit: React.FC = () => {
   const [vocabList, setVocabList] = useState<IFetchedVocabularySets | null>(null);
@@ -29,7 +34,12 @@ const edit: React.FC = () => {
               <p className="text-gray-600 text-sm mb-2">Number of Words: {set.terms.length}</p>
               <p className="text-gray-600 text-sm mb-2">Creator: {set.creator}</p>
               <p className="text-lg mb-2">Terms: {set.terms.join(", ")}</p>
-              <p className="text-lg mb-2">Definitions: {set.definitions.join(", ")}</p>
+              <p className="text-lg mb-2">Definitions: {set.definitions.join(", ")}</p>{" "}
+              <OnClickButton
+                onClick={fornow}
+                label="Edit"
+                className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
+              />
             </div>
           );
         })}
