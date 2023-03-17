@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import { IFetchedVocabularySets } from "../interfaces/props";
 import OnClickButton from "./OnClickButton";
