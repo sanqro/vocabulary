@@ -4,7 +4,7 @@ import { IVocabularyInput } from "../interfaces/props";
 import OnClickButton from "./OnClickButton";
 import InputWord from "./InputWord";
 
-function AddVocabulary(Vocabulary: IVocabularyInput) {
+function addVocabulary(vocabulary: IVocabularyInput) {
   fetch("http://localhost:3000/sets/create", {
     method: "POST",
     headers: {
@@ -14,28 +14,40 @@ function AddVocabulary(Vocabulary: IVocabularyInput) {
     body: JSON.stringify({
       title: (document.getElementById("titleInput") as HTMLInputElement).value,
       creator: sessionStorage.getItem("user"),
-      terms: Vocabulary.term,
-      definitions: Vocabulary.definition
+      terms: vocabulary.term,
+      definitions: vocabulary.definition
     })
+  }).then(() => {
+    alert("Your Vocabulary has been added successfully");
   });
 }
 
-function checkWords(Vocabulary: IVocabularyInput) {
-  let pipi = 0;
-  for (let i = 0; i < Vocabulary.term.length; i++) {
-    if (Vocabulary.term[i] === "" || Vocabulary.term[i] === " ") {
-      alert("There is a term which has nothing or a space in it");
-      pipi = 1;
+function checkWords(vocabulary: IVocabularyInput) {
+  let termBoolean = false;
+  let definitionBoolean = false;
+  for (let i = 0; i < vocabulary.term.length; i++) {
+    if (vocabulary.term[i] === "" || vocabulary.term[i] === " ") {
+      termBoolean = true;
     }
   }
-  for (let i = 0; i < Vocabulary.definition.length; i++) {
-    if (Vocabulary.definition[i] === "" || Vocabulary.definition[i] === " ") {
-      alert("There is a definition which has nothing or a space in it");
-      pipi = 1;
+  for (let i = 0; i < vocabulary.definition.length; i++) {
+    if (vocabulary.definition[i] === "" || vocabulary.definition[i] === " ") {
+      definitionBoolean = true;
     }
   }
-  if (pipi == 0) {
-    AddVocabulary(Vocabulary);
+  if (
+    (document.getElementById("titleInput") as HTMLInputElement).value == "" ||
+    (document.getElementById("titleInput") as HTMLInputElement).value == " "
+  ) {
+    alert("The vocabulary doesn't have a title");
+  } else if (vocabulary.term.length == 0) {
+    alert("There are no words in the vocabulary");
+  } else if (termBoolean == true) {
+    alert("There is a term which has nothing or a space in it");
+  } else if (definitionBoolean == true) {
+    alert("There is a definition which has nothing or a space in it");
+  } else if (definitionBoolean == false && termBoolean == false) {
+    addVocabulary(vocabulary);
   }
 }
 

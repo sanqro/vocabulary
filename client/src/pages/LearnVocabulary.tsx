@@ -1,6 +1,6 @@
 import React from "react";
-import LinkButton from "../components/LinkButton";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function startLearn() {
   alert("You are learning now");
@@ -8,13 +8,8 @@ function startLearn() {
 
 function LearnVocabulary() {
   return (
-    <>
-      <header className="bg-gray-200 py-4 flex flex-row justify-center items-center">
-        <LinkButton destination="/viewVocabulary">View Vocabulary</LinkButton>
-        <LinkButton destination="/Create">Create Vocabulary</LinkButton>
-        <LinkButton destination="/Edit">Edit Vocabulary</LinkButton>
-        <LinkButton destination="/Learn">Learn Vocabulary</LinkButton>
-      </header>
+    <div className="flex flex-col h-screen">
+      <Header></Header>
       <main id="body">
         <button
           onClick={startLearn}
@@ -23,10 +18,8 @@ function LearnVocabulary() {
           Start
         </button>
       </main>
-      <footer className="fixed bottom-0 w-full bg-gray-200 py-4 p-0" id="footer">
-        <Footer></Footer>
-      </footer>
-    </>
+      <Footer></Footer>
+    </div>
   );
 }
 
