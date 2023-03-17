@@ -17,6 +17,14 @@ export interface IFetchedVocabularySets {
     count: number;
   }
 
+export interface ILearnModeData {
+    terms: string[];
+    definitions: string[];
+    title: string;
+    creator: string;
+  }
+  
+
 export interface IOnClickButton {
     onClick: () => void;
     label: string;
