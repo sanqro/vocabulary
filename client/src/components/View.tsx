@@ -3,10 +3,10 @@ import { IFetchedVocabularySets } from "../interfaces/props";
 import OnClickButton from "./OnClickButton";
 
 const fornow = () => {
-  console.log("want to edit vocab");
+  console.log("want to view vocab");
 };
 
-const edit: React.FC = () => {
+const view: React.FC = () => {
   const [vocabList, setVocabList] = useState<IFetchedVocabularySets | null>(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const edit: React.FC = () => {
               <p className="text-gray-600 text-sm mb-2">Creator: {set.creator}</p>
               <OnClickButton
                 onClick={fornow}
-                label="Edit"
+                label="View"
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
               />
             </div>
@@ -45,4 +45,4 @@ const edit: React.FC = () => {
   );
 };
 
-export default edit;
+export default view;

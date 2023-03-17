@@ -1,6 +1,7 @@
 export interface ILinkButton {
     destination: string;
     children: string;
+    className?: string;
 }
 
 export interface IVocabularySet {
