@@ -3,7 +3,7 @@ import { IFetchedVocabularySets } from "../interfaces/props";
 import LearnInput from "./LearnInput";
 import OnClickButton from "./OnClickButton";
 
-const edit: React.FC = () => {
+const learnView: React.FC = () => {
   const [vocabList, setVocablist] = useState<IFetchedVocabularySets | null>(null);
   const [learnMode, setlearnMode] = useState<boolean>(false);
   const [terms, setTerms] = useState<string[]>([]);
@@ -28,7 +28,7 @@ const edit: React.FC = () => {
 
   const startLearn = async (vocabularySetId: string) => {
     sessionStorage.setItem("vocabularySetId", vocabularySetId);
-  
+
     const response = await fetch(`http://localhost:3000/sets/getSet/${vocabularySetId}`, {
       method: "GET",
       headers: {
@@ -36,25 +36,24 @@ const edit: React.FC = () => {
         Authorization: sessionStorage.getItem("token") as string
       }
     });
-  
+
     const data = await response.json();
     setTerms(data.fetchedVocabularySet.terms);
     setDefinitions(data.fetchedVocabularySet.definitions);
     setTitle(data.fetchedVocabularySet.title);
     setCreator(data.fetchedVocabularySet.creator);
-    sessionStorage.setItem("learnMode", "true");
-  
-    if (definitions== null || terms == null || title == null || creator == null) {
+
+    if (definitions == null || terms == null || title == null || creator == null) {
       alert("There was an internal error");
-    }
-    else {
+    } else {
       setlearnMode(true);
     }
   };
-  
+
   return (
     <div className="p-4">
-      {!learnMode && vocabList &&
+      {!learnMode &&
+        vocabList &&
         vocabList.items.map((set: any) => {
           return (
             <div key={set.key} className="border rounded-lg p-4 mb-4">
@@ -71,9 +70,11 @@ const edit: React.FC = () => {
             </div>
           );
         })}
-      {learnMode && <LearnInput terms={terms} definitions={definitions} title={title} creator={creator} />}
+      {learnMode && (
+        <LearnInput terms={terms} definitions={definitions} title={title} creator={creator} />
+      )}
     </div>
   );
 };
 
-export default edit;
+export default learnView;
