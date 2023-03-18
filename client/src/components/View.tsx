@@ -37,7 +37,7 @@ const view: React.FC = () => {
                 onClick={() => {
                   fornow();
                 }}
-                label={"Learn this set"}
+                label={"View"}
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
               ></VocabularySetCard>
             </div>
