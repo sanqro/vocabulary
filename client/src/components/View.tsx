@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { IFetchedVocabularySets } from "../interfaces/props";
 import OnClickButton from "./OnClickButton";
+import VocabularySetCard from "./VocabularySetCard";
 
 const fornow = () => {
   console.log("want to view vocab");
@@ -30,15 +31,15 @@ const view: React.FC = () => {
       {vocabList &&
         vocabList.items.map((set: any) => {
           return (
-            <div key={set.key} className="border rounded-lg p-4 mb-4">
-              <h2 className="text-2xl font-bold">{set.title}</h2>
-              <p className="text-gray-600 text-sm mb-2">Number of Words: {set.terms.length}</p>
-              <p className="text-gray-600 text-sm mb-2">Creator: {set.creator}</p>
-              <OnClickButton
-                onClick={fornow}
-                label="View"
+            <div key={set.key}>
+              <VocabularySetCard
+                vocabularySet={set}
+                onClick={() => {
+                  fornow();
+                }}
+                label={"Learn this set"}
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
-              />
+              ></VocabularySetCard>
             </div>
           );
         })}
