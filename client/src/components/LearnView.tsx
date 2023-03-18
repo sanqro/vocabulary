@@ -62,7 +62,7 @@ const learnView: React.FC = () => {
                 onClick={() => {
                   startLearn(set.key);
                 }}
-                label={"Learn this set"}
+                label={`Learn ${set.title}`}
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
               ></VocabularySetCard>
             </div>
