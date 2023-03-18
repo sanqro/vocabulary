@@ -23,8 +23,8 @@ const Edit: React.FC = () => {
     fetchVocabList();
   }, []);
 
-  const handleEditClick = async (setId: string) => {
-    const response = await fetch(`http://localhost:3000/sets/getSet/${setId}`, {
+  const handleEditClick = async (id: string) => {
+    const response = await fetch(`http://localhost:3000/sets/getSet/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,8 +35,8 @@ const Edit: React.FC = () => {
     setSelectedSet(data.fetchedVocabularySet);
   };
 
-  const handleDeleteClick = async (setId: string) => {
-    const response = await fetch(`http://localhost:3000/sets/delete/${setId}`, {
+  const handleDeleteClick = async (id: string) => {
+    const response = await fetch(`http://localhost:3000/sets/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

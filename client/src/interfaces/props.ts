@@ -58,3 +58,10 @@ export interface IEditVocbularySetCard {
   onEditClick: () => void;
   onDeleteClick: () => void;
 }
+
+export interface IEditVocabularySetForm {
+  selectedSet: IVocabularySet;
+  handleInputChange: (type: keyof IVocabularySet, index: number, value: string) => void;
+  handleSaveClick: () => void;
+  handleCancelClick: () => void;
+}
