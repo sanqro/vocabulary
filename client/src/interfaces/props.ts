@@ -5,7 +5,6 @@ export interface ILinkButton {
 }
 
 export interface IVocabularySet {
-  oldKey: string;
   key: string;
   title: string;
   creator: string;
@@ -45,4 +44,11 @@ export interface IInputWord {
 
 export interface IEditView {
   children: string;
+}
+
+export interface IVocabularySetCard {
+  vocabularySet: IVocabularySet;
+  onClick: () => void;
+  label: string;
+  className?: string;
 }
