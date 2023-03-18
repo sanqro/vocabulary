@@ -52,3 +52,9 @@ export interface IVocabularySetCard {
   label: string;
   className?: string;
 }
+
+export interface IEditVocbularySetCard {
+  vocabSet: IVocabularySet;
+  onEditClick: () => void;
+  onDeleteClick: () => void;
+}
