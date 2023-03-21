@@ -14,6 +14,7 @@ const EditVocabSetForm: React.FC<IEditVocabularySetForm> = ({
       {selectedSet.terms.map((term, index) => (
         <div key={index} className="mb-2">
           <input
+            className="mr-2"
             type="text"
             value={selectedSet.terms[index]}
             placeholder={term}
