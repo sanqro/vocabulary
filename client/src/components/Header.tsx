@@ -4,7 +4,7 @@ import LinkButton from "./LinkButton";
 function header() {
   return (
     <header className="flex justify-evenly items-center flex-shrink-0 bg-gray-200 p-4 padding">
-      <LinkButton destination="/viewVocabulary" className="w-1/4 text-center">
+      <LinkButton destination="/View" className="w-1/4 text-center">
         View Vocabulary
       </LinkButton>
       <LinkButton destination="/Create" className="w-1/4 text-center">
