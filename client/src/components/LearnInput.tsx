@@ -36,7 +36,7 @@ const LearnInput: React.FC<ILearnModeData> = ({ terms, definitions, title, creat
     <div className="flex flex-col items-center justify-center h-fit">
       <h1 className="text-4xl font-bold mb-4">{`${title} by ${creator}`}</h1>
       <p className="text-lg mb-4">{terms[currentTermIndex]}</p>
-      <span className="font-bold">Word {currentTermIndex + 1}:</span>{" "}
+      <span className="font-bold">Word {currentTermIndex + 1}:</span>
       <p className="text-lg mb-4">{remainingWords} words remaining</p>
       <input
         type="text"
