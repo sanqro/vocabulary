@@ -78,7 +78,7 @@ const InputPair = () => {
         <div className="flex space-x-4 mb-4" key={index}>
           <InputWord
             type="text"
-            placeholder="Begriff"
+            placeholder="Term"
             value={pair.definition[0]}
             onChange={(e) => handleChange(index, "term", e.target.value)}
           />
