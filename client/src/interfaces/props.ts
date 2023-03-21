@@ -2,6 +2,7 @@ export interface ILinkButton {
   destination: string;
   children: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export interface IVocabularySet {
@@ -64,4 +65,11 @@ export interface IEditVocabularySetForm {
   handleInputChange: (type: keyof IVocabularySet, index: number, value: string) => void;
   handleSaveClick: () => void;
   handleCancelClick: () => void;
+}
+
+export interface IViewVocabularySet {
+  title: string;
+  creator: string;
+  terms: string[];
+  definitions: string[];
 }

@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import { IFetchedVocabularySets } from "../interfaces/props";
-import OnClickButton from "./OnClickButton";
+import ViewVocabulary from "./ViewVocabulary";
 import VocabularySetCard from "./VocabularySetCard";
 
-const fornow = () => {
-  console.log("want to view vocab");
-};
-
-const view: React.FC = () => {
-  const [vocabList, setVocabList] = useState<IFetchedVocabularySets | null>(null);
+const View: React.FC = () => {
+  const [vocabList, setVocablist] = useState<IFetchedVocabularySets | null>(null);
+  const [viewMode, setViewMode] = useState<boolean>(false);
+  const [terms, setTerms] = useState<string[]>([]);
+  const [definitions, setDefinitions] = useState<string[]>([]);
+  const [title, setTitle] = useState<string>("");
+  const [creator, setCreator] = useState<string>("");
 
   useEffect(() => {
     const fetchVocabList = async () => {
@@ -21,21 +21,46 @@ const view: React.FC = () => {
         }
       });
       const data = await response.json();
-      setVocabList(data.fetchedVocabularySets);
+      setVocablist(data.fetchedVocabularySets);
     };
     fetchVocabList();
   }, []);
 
+  const startView = async (vocabularySetId: string) => {
+    sessionStorage.setItem("vocabularySetId", vocabularySetId);
+
+    const response = await fetch(`http://localhost:3000/sets/getSet/${vocabularySetId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: sessionStorage.getItem("token") as string
+      }
+    });
+
+    const data = await response.json();
+    setTerms(data.fetchedVocabularySet.terms);
+    setDefinitions(data.fetchedVocabularySet.definitions);
+    setTitle(data.fetchedVocabularySet.title);
+    setCreator(data.fetchedVocabularySet.creator);
+
+    if (definitions == null || terms == null || title == null || creator == null) {
+      alert("There was an internal error");
+    } else {
+      setViewMode(true);
+    }
+  };
+
   return (
     <div className="p-4">
-      {vocabList &&
+      {!viewMode &&
+        vocabList &&
         vocabList.items.map((set: any) => {
           return (
             <div key={set.key}>
               <VocabularySetCard
                 vocabularySet={set}
                 onClick={() => {
-                  fornow();
+                  startView(set.key);
                 }}
                 label={`View ${set.title}`}
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
@@ -43,8 +68,11 @@ const view: React.FC = () => {
             </div>
           );
         })}
+      {viewMode && (
+        <ViewVocabulary title={title} creator={creator} terms={terms} definitions={definitions} />
+      )}
     </div>
   );
 };
 
-export default view;
+export default View;
