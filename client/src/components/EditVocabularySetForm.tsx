@@ -31,12 +31,12 @@ const EditVocabSetForm: React.FC<IEditVocabularySetForm> = ({
         <OnClickButton
           onClick={() => handleSaveClick()}
           label="Save"
-          className="py-2 px-4 text-white rounded mx-10% bg-green-500"
+          className="py-2 px-4 mr-2 text-white rounded mx-10% bg-blue-500"
         />
         <OnClickButton
           onClick={() => handleCancelClick()}
           label="Cancel"
-          className="py-2 px-4 text-white rounded mx-10% bg-gray-500"
+          className="py-2 px-4 text-white rounded mx-10% bg-red-500"
         />
       </div>
     </div>

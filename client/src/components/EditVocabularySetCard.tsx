@@ -15,7 +15,7 @@ const VocabSetCard: React.FC<IEditVocbularySetCard> = ({
       <OnClickButton
         onClick={onEditClick}
         label="Edit"
-        className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
+        className="py-2 px-4 mr-2 text-white rounded mx-10% bg-blue-500"
       />
       <OnClickButton
         onClick={onDeleteClick}
