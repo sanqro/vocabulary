@@ -8,13 +8,20 @@ const LearnInput: React.FC<ILearnModeData> = ({ terms, definitions, title, creat
   const [currentTermIndex, setCurrentTermIndex] = useState<number>(0);
   const [inputValue, setInputValue] = useState<string>("");
   const [remainingWords, setRemainingWords] = useState<number>(terms.length);
+  const [isSwapped, setIsSwapped] = useState<boolean>(false);
 
   const handleInputValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
+  const handleSwapButtonClick = () => {
+    setIsSwapped(!isSwapped);
+  };
+
   const handleValidateButtonClick = () => {
-    const isCorrect = inputValue === definitions[currentTermIndex];
+    const isCorrect = isSwapped
+      ? inputValue === terms[currentTermIndex]
+      : inputValue === definitions[currentTermIndex];
 
     setCurrentTermIndex(currentTermIndex + 1);
     setRemainingWords(remainingWords - 1);
@@ -35,7 +42,9 @@ const LearnInput: React.FC<ILearnModeData> = ({ terms, definitions, title, creat
   return (
     <div className="flex flex-col items-center justify-center h-fit">
       <h1 className="text-4xl font-bold mb-4">{`${title} by ${creator}`}</h1>
-      <p className="text-lg mb-4">{terms[currentTermIndex]}</p>
+      <p className="text-lg mb-4">
+        {isSwapped ? definitions[currentTermIndex] : terms[currentTermIndex]}
+      </p>
       <span className="font-bold">Word {currentTermIndex + 1}:</span>
       <p className="text-lg mb-4">{remainingWords} words remaining</p>
       <input
@@ -48,7 +57,12 @@ const LearnInput: React.FC<ILearnModeData> = ({ terms, definitions, title, creat
       <OnClickButton
         onClick={handleValidateButtonClick}
         label="Validate"
-        className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
+        className="py-2 px-4 text text-white rounded mx-10% bg-blue-500"
+      />
+      <OnClickButton
+        onClick={handleSwapButtonClick}
+        label={isSwapped ? "Answer with Terms" : "Answer with Definitions"}
+        className="text-white mt-2 py-2 px-4 rounded mx-10% bg-blue-500"
       />
     </div>
   );
