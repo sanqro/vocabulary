@@ -10,7 +10,7 @@ const Edit: React.FC = () => {
   useEffect(() => {
     const fetchVocabList = async () => {
       const user = sessionStorage.getItem("user");
-      const response = await fetch(`http://localhost:3000/sets/getAll/${user}`, {
+      const response = await fetch(`https://api.sanqro.me/sets/getAll/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const Edit: React.FC = () => {
   }, []);
 
   const handleEditClick = async (id: string) => {
-    const response = await fetch(`http://localhost:3000/sets/getSet/${id}`, {
+    const response = await fetch(`https://api.sanqro.me/sets/getSet/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const Edit: React.FC = () => {
   };
 
   const handleDeleteClick = async (id: string) => {
-    const response = await fetch(`http://localhost:3000/sets/delete/${id}`, {
+    const response = await fetch(`https://api.sanqro.me/sets/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Edit: React.FC = () => {
     if (response.status === 200) {
       {
         const user = sessionStorage.getItem("user");
-        const response = await fetch(`http://localhost:3000/sets/getAll/${user}`, {
+        const response = await fetch(`https://api.sanqro.me/sets/getAll/${user}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Edit: React.FC = () => {
     const { key, ...newSetData } = selectedSet;
 
     try {
-      await fetch("http://localhost:3000/sets/update", {
+      await fetch("https://api.sanqro.me/sets/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

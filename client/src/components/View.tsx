@@ -13,7 +13,7 @@ const View: React.FC = () => {
 
   useEffect(() => {
     const fetchVocabList = async () => {
-      const response = await fetch("http://localhost:3000/sets/getAll", {
+      const response = await fetch("https://api.sanqro.me/sets/getAll", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const View: React.FC = () => {
   const startView = async (vocabularySetId: string) => {
     sessionStorage.setItem("vocabularySetId", vocabularySetId);
 
-    const response = await fetch(`http://localhost:3000/sets/getSet/${vocabularySetId}`, {
+    const response = await fetch(`https://api.sanqro.me/sets/getSet/${vocabularySetId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
