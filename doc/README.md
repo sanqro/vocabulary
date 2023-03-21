@@ -103,7 +103,7 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 | 17       | Muss            | qual.             | Die Passwörter wurden argon2 verschüsselt.                                                                                                                                                |
 | 18       | Muss            | funk.             | Die Daten sollen in Deta Datenbank gespeichert werden.                                                                                                                                    |
 | 19       | Muss            | funk.             | Die Daten sollen von der Datenbank geholt werden,die gerade für die Sitzung gebraucht werden.                                                                                             |
-| 20       | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesn.                                                                                                                   |
+| 20       | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesen.                                                                                                                   |
 | 21       | Muss            | funk.             | Wenn man sich registriert wird ein Benutzer erstellt in der Datenbank erstellt.                                                                                                           |
 
 ## Arbeitspakete
