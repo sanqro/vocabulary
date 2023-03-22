@@ -1,4 +1,4 @@
-# Dokumentation - [Vocabulary Webapplication](https://vocabulary1304.netlify.app/)
+# Dokumentation - [Vocabulary Webapplication](https://vocabulary.sanqro.me/)
 
 ### Inhaltsverzeichnis
 
@@ -62,7 +62,7 @@ Für dieses Projekt haben wir uns dafür entschieden, dass wir eine kleine Appli
 
 Die Seite ist unter folgender Adresse erreichbar:
 
-[https://vocabulary1304.netlify.app/](https://vocabulary1304.netlify.app/)
+[https://vocabulary.sanqro.me/](https://vocabulary.sanqro.me/)
 
 ## Technologien
 
@@ -103,7 +103,7 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 | 17       | Muss            | qual.             | Die Passwörter wurden argon2 verschüsselt.                                                                                                                                                |
 | 18       | Muss            | funk.             | Die Daten sollen in Deta Datenbank gespeichert werden.                                                                                                                                    |
 | 19       | Muss            | funk.             | Die Daten sollen von der Datenbank geholt werden,die gerade für die Sitzung gebraucht werden.                                                                                             |
-| 20       | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesen.                                                                                                                   |
+| 20       | Muss            | funk.             | Wenn man sich einloggt bekommt man vom Backend ein JWT-Token zugewiesen.                                                                                                                  |
 | 21       | Muss            | funk.             | Wenn man sich registriert wird ein Benutzer erstellt in der Datenbank erstellt.                                                                                                           |
 
 ## Arbeitspakete
@@ -114,25 +114,33 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 >
 > 5 \* 6 \* 2 = 60 Arbeitpakete
 
-| Nr. | Frist | Beschreibung | Zeit in Arbeitspaketen (geplant) |
-| --- | ----- | ------------ | :------------------------------- |
-| 1   | 03.02.2023      | Informieren (von IPERKA)              | 10                                 |
-| 2   | 24.06.2023      | Planen (von IPERKA)             | 6                                 |
-| 3   | 24.02.2023      | Entscheiden (von IPERKA)             | 4                                 |
-| 4   | 03.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 1 bis 4 und 17 bis 21            | 10                                 |
-| 5   | 10.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 5 bis 10            | 10                                 |
-| 6   | 17.03.2023      | Realisieren (von IPERKA) der Anforderungen Nr. 10 bis 16            | 10                                 |
-| 7   | 24.03.2023      | Kontrollieren (von IPERKA)             | 6                                 |
-| 8   | 24.03.2023      | Auswerten (von IPERKA)             | 4                                 |
-| 9   | 31.03.2023      | Portfolioeintrag fertigstellen             | 8                                 |
+| Nr. | Frist      | Beschreibung                                                         | Zeit in Arbeitspaketen (geplant) |
+| --- | ---------- | -------------------------------------------------------------------- | :------------------------------- |
+| 1   | 03.02.2023 | Informieren (von IPERKA)                                             | 10                               |
+| 2   | 24.06.2023 | Planen (von IPERKA)                                                  | 6                                |
+| 3   | 24.02.2023 | Entscheiden (von IPERKA)                                             | 4                                |
+| 4   | 03.03.2023 | Realisieren (von IPERKA) der Anforderungen Nr. 1 bis 4 und 17 bis 21 | 10                               |
+| 5   | 10.03.2023 | Realisieren (von IPERKA) der Anforderungen Nr. 5 bis 10              | 10                               |
+| 6   | 17.03.2023 | Realisieren (von IPERKA) der Anforderungen Nr. 10 bis 16             | 10                               |
+| 7   | 24.03.2023 | Kontrollieren (von IPERKA)                                           | 6                                |
+| 8   | 24.03.2023 | Auswerten (von IPERKA)                                               | 4                                |
+| 9   | 31.03.2023 | Portfolioeintrag fertigstellen                                       | 8                                |
 
 ## Ausführung
 
-| Nr. | Frist | Bemerkung | Zeit (geplant) | Zeit (effektiv) |
-| --- | ----- | --------- | -------------- | --------------- |
-| 1   |       |           |                |                 |
+| Nr. | Frist      | Bemerkung                                                                                                                     | Zeit (geplant) | Zeit (effektiv) |
+| :-- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------- | --------------- |
+| 1   | 03.02.2023 | Hat länger als normal gedauert, aber war noch im Rahmen.                                                                      | 10             | 10              |
+| 2   | 24.06.2023 | Wir haben mehr geplant als wir umsetzen können in der Zeit, da wir noch später an dem Projekt arbeiten wollen.                | 6              | 6               |
+| 3   | 24.02.2023 | Das Entscheiden ging recht schnell, da es sehr eindeutig war, was wir benutzen wollen.                                        | 4              | 2               |
+| 4   | 03.03.2023 | Wir hätten zu der neuen Version von Deta migrieren sollen, wobei es Probleme gab.                                             | 10             | 16              |
+| 5   | 10.03.2023 | Einer von uns hat mit Typescript in dem Projekt seine ersten Erfahrungen gemacht, darum ging es am Anfang eher langsam voran. | 10             | 20              |
+| 6   | 17.03.2023 | Weil wir mehr geplant haben, haben wir nicht alle Anforderungen geschafft umzusetzen.                                         | 10             | 18              |
+| 7   | 24.03.2023 | Es ging eigentlich ganz gut.                                                                                                  | 6              | 6               |
+| 8   | 24.03.2023 | Es ging gut.                                                                                                                  | 4              | 4               |
+| 9   | 31.03.2023 | Es konnte gemacht werden, wie es geplant wurde.                                                                               | 8              | 7               |
 
-## Testen
+# Testen
 
 ### Testumgebungen
 
@@ -140,13 +148,13 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 | Testf.-Nr. | Anf-Nr. | Vorbereitung | Testumgebung | Eingabe | Erw. Ausgabe |
 | :--------: | ------- | :----------- | ------------ | ------- | ------------ |
-|    1.1     |         |              |              |         |              |
+|            |         |              |              |         |              |
 
 ### Testprotokoll
 
 | Test-Nr | Bericht | Tester |
 | :------ | :------ | ------ |
-| 1.1     |         |        |
+|         |         |        |
 
 ### Testbericht
 
