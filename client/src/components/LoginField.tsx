@@ -3,19 +3,18 @@ import { useNavigate } from "react-router-dom";
 import OnClickButton from "./OnClickButton";
 
 function LoginField() {
-
   const nav = useNavigate();
 
-  const submitLogin = async() => {
+  const submitLogin = async () => {
     const username = (document.getElementById("username") as HTMLInputElement).value as string;
     const password = (document.getElementById("password") as HTMLInputElement).value as string;
-  
+
     if (username == "" || password == "") {
       alert("Please provide your password and username!");
       return false;
     }
-  
-    const login = await fetch("http://localhost:3000/auth/login", {
+
+    const login = await fetch("https://api.sanqro.me/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -25,7 +24,7 @@ function LoginField() {
         password: password
       })
     });
-  
+
     const response = await login.json();
     if (await response.success) {
       sessionStorage.setItem("user", username);
@@ -35,14 +34,14 @@ function LoginField() {
       alert("There was an error: " + response.error);
     }
   };
-  
-  return(
+
+  return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col items-center rounded-md py-8 px-10 w-1/4">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Login</h1>
         <div className="flex flex-col space-y-2">
           <label htmlFor="username" className="text-gray-800 font-bold text-lg">
-              Username
+            Username
           </label>
           <input
             type="text"
@@ -53,7 +52,7 @@ function LoginField() {
         </div>
         <div className="flex flex-col space-y-2">
           <label htmlFor="password" className="text-gray-800 font-bold text-lg">
-              Password
+            Password
           </label>
           <input
             type="password"

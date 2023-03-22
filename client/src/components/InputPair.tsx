@@ -5,7 +5,7 @@ import OnClickButton from "./OnClickButton";
 import InputWord from "./InputWord";
 
 function addVocabulary(vocabulary: IVocabularyInput) {
-  fetch("http://localhost:3000/sets/create", {
+  fetch("https://api.sanqro.me/sets/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const InputPair = () => {
         <div className="flex space-x-4 mb-4" key={index}>
           <InputWord
             type="text"
-            placeholder="Begriff"
+            placeholder="Term"
             value={pair.definition[0]}
             onChange={(e) => handleChange(index, "term", e.target.value)}
           />
@@ -92,12 +92,12 @@ const InputPair = () => {
       ))}
       <OnClickButton
         onClick={handleAddPair}
-        label="Wort hinzufügen"
+        label="Add pair of words"
         className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
       />
       <OnClickButton
         onClick={handleCreateVocabulary}
-        label="Vokabularset erstellen"
+        label="Create vocabulary set"
         className="py-2 px-4 text-white rounded mx-10% bg-green-500 float-right"
       />
     </div>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { IFetchedVocabularySets } from "../interfaces/props";
 import LearnInput from "./LearnInput";
-import OnClickButton from "./OnClickButton";
+import VocabularySetCard from "./VocabularySetCard";
 
-const edit: React.FC = () => {
+const learnView: React.FC = () => {
   const [vocabList, setVocablist] = useState<IFetchedVocabularySets | null>(null);
   const [learnMode, setlearnMode] = useState<boolean>(false);
   const [terms, setTerms] = useState<string[]>([]);
@@ -13,7 +13,7 @@ const edit: React.FC = () => {
 
   useEffect(() => {
     const fetchVocabList = async () => {
-      const response = await fetch("http://localhost:3000/sets/getAll", {
+      const response = await fetch("https://api.sanqro.me/sets/getAll", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -28,52 +28,51 @@ const edit: React.FC = () => {
 
   const startLearn = async (vocabularySetId: string) => {
     sessionStorage.setItem("vocabularySetId", vocabularySetId);
-  
-    const response = await fetch(`http://localhost:3000/sets/getSet/${vocabularySetId}`, {
+
+    const response = await fetch(`https://api.sanqro.me/sets/getSet/${vocabularySetId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: sessionStorage.getItem("token") as string
       }
     });
-  
+
     const data = await response.json();
     setTerms(data.fetchedVocabularySet.terms);
     setDefinitions(data.fetchedVocabularySet.definitions);
     setTitle(data.fetchedVocabularySet.title);
     setCreator(data.fetchedVocabularySet.creator);
-    sessionStorage.setItem("learnMode", "true");
-  
-    if (definitions== null || terms == null || title == null || creator == null) {
+
+    if (definitions == null || terms == null || title == null || creator == null) {
       alert("There was an internal error");
-    }
-    else {
+    } else {
       setlearnMode(true);
     }
   };
-  
+
   return (
     <div className="p-4">
-      {!learnMode && vocabList &&
+      {!learnMode &&
+        vocabList &&
         vocabList.items.map((set: any) => {
           return (
-            <div key={set.key} className="border rounded-lg p-4 mb-4">
-              <h2 className="text-2xl font-bold">{set.title}</h2>
-              <p className="text-gray-600 text-sm mb-2">Number of Words: {set.terms.length}</p>
-              <p className="text-gray-600 text-sm mb-2">Creator: {set.creator}</p>
-              <OnClickButton
+            <div key={set.key}>
+              <VocabularySetCard
+                vocabularySet={set}
                 onClick={() => {
                   startLearn(set.key);
                 }}
-                label="Learn this Set"
+                label={`Learn ${set.title}`}
                 className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
-              />
+              ></VocabularySetCard>
             </div>
           );
         })}
-      {learnMode && <LearnInput terms={terms} definitions={definitions} title={title} creator={creator} />}
+      {learnMode && (
+        <LearnInput terms={terms} definitions={definitions} title={title} creator={creator} />
+      )}
     </div>
   );
 };
 
-export default edit;
+export default learnView;

@@ -78,11 +78,11 @@ router.get("/getAll/:creator", async (req, res) => {
   }
 });
 
-router.delete("/delete/:id", checkUser, async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
-    const fetchedVocabularySet = await vocabularySet.get(req.params.id);
+    const fetchedVocabularySet = await vocabularySet.get(req.params.id as string);
     if (fetchedVocabularySet != null) {
-      await vocabularySet.delete(req.params.id);
+      await vocabularySet.delete(req.params.id as string);
       res.status(200).json({ message: "Deleted vocabulary set", id: req.params.id, sucess: true });
     } else {
       res.status(409).json({

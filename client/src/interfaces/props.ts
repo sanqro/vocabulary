@@ -1,15 +1,16 @@
 export interface ILinkButton {
   destination: string;
   children: string;
+  className?: string;
+  onClick?: () => void;
 }
 
 export interface IVocabularySet {
-  oldKey?: string;
-  key?: string;
-  title?: string;
-  creator?: string;
-  terms?: string[];
-  definitions?: string[];
+  key: string;
+  title: string;
+  creator: string;
+  terms: string[];
+  definitions: string[];
 }
 
 export interface IFetchedVocabularySets {
@@ -46,44 +47,29 @@ export interface IEditView {
   children: string;
 }
 
-export interface ILinkButton {
-  destination: string;
-  children: string;
-  className?: string;
-}
-
-export interface IVocabularySet {
-  oldKey?: string;
-  key?: string;
-  title?: string;
-  creator?: string;
-  terms?: string[];
-  definitions?: string[];
-}
-
-export interface IFetchedVocabularySets {
-  items: IVocabularySet[];
-  count: number;
-}
-
-export interface IOnClickButton {
+export interface IVocabularySetCard {
+  vocabularySet: IVocabularySet;
   onClick: () => void;
   label: string;
   className?: string;
 }
 
-export interface IVocabularyInput {
-  definition: string[];
-  term: string[];
+export interface IEditVocbularySetCard {
+  vocabSet: IVocabularySet;
+  onEditClick: () => void;
+  onDeleteClick: () => void;
 }
 
-export interface IInputWord {
-  type: string;
-  placeholder?: string;
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+export interface IEditVocabularySetForm {
+  selectedSet: IVocabularySet;
+  handleInputChange: (type: keyof IVocabularySet, index: number, value: string) => void;
+  handleSaveClick: () => void;
+  handleCancelClick: () => void;
 }
 
-export interface IEditView {
-  children: string;
+export interface IViewVocabularySet {
+  title: string;
+  creator: string;
+  terms: string[];
+  definitions: string[];
 }

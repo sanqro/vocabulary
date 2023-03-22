@@ -1,19 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
-import { IFetchedVocabularySets } from "../interfaces/props";
-import OnClickButton from "./OnClickButton";
+import { IVocabularySet } from "../interfaces/props";
+import VocabSetCard from "./EditVocabularySetCard";
+import EditVocabSetForm from "./EditVocabularySetForm";
 
-const fornow = () => {
-  console.log("want to edit vocab");
-};
-
-const edit: React.FC = () => {
-  const [vocabList, setVocabList] = useState<IFetchedVocabularySets | null>(null);
+const Edit: React.FC = () => {
+  const [vocabList, setVocabList] = useState<IVocabularySet[]>([]);
+  const [selectedSet, setSelectedSet] = useState<IVocabularySet | null>(null);
 
   useEffect(() => {
     const fetchVocabList = async () => {
       const user = sessionStorage.getItem("user");
-      const response = await fetch(`http://localhost:3000/sets/getAll/${user}`, {
+      const response = await fetch(`https://api.sanqro.me/sets/getAll/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -21,30 +18,97 @@ const edit: React.FC = () => {
         }
       });
       const data = await response.json();
-      setVocabList(data.fetchedVocabularySets);
+      setVocabList(data.fetchedVocabularySets.items);
     };
     fetchVocabList();
   }, []);
 
+  const handleEditClick = async (id: string) => {
+    const response = await fetch(`https://api.sanqro.me/sets/getSet/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: sessionStorage.getItem("token") as string
+      }
+    });
+    const data = await response.json();
+    setSelectedSet(data.fetchedVocabularySet);
+  };
+
+  const handleDeleteClick = async (id: string) => {
+    const response = await fetch(`https://api.sanqro.me/sets/delete/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: sessionStorage.getItem("token") as string
+      }
+    });
+    if (response.status === 200) {
+      {
+        const user = sessionStorage.getItem("user");
+        const response = await fetch(`https://api.sanqro.me/sets/getAll/${user}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: sessionStorage.getItem("token") as string
+          }
+        });
+        const data = await response.json();
+        setVocabList(data.fetchedVocabularySets.items);
+      }
+    }
+  };
+
+  const handleSaveClick = async () => {
+    if (!selectedSet) return;
+
+    const oldKey = selectedSet.key;
+    const { key, ...newSetData } = selectedSet;
+
+    try {
+      await fetch("https://api.sanqro.me/sets/update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: sessionStorage.getItem("token") as string
+        },
+        body: JSON.stringify({ oldKey, ...newSetData })
+      });
+
+      setSelectedSet(null);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleInputChange = (type: keyof IVocabularySet, index: number, value: string) => {
+    if (selectedSet) {
+      const updatedSet: IVocabularySet = { ...selectedSet };
+      (updatedSet[type] as string[])[index] = value;
+      setSelectedSet(updatedSet);
+    }
+  };
+
   return (
     <div className="p-4">
-      {vocabList &&
-        vocabList.items.map((set: any) => {
-          return (
-            <div key={set.key} className="border rounded-lg p-4 mb-4">
-              <h2 className="text-2xl font-bold">{set.title}</h2>
-              <p className="text-gray-600 text-sm mb-2">Number of Words: {set.terms.length}</p>
-              <p className="text-gray-600 text-sm mb-2">Creator: {set.creator}</p>
-              <OnClickButton
-                onClick={fornow}
-                label="Edit"
-                className="py-2 px-4 text-white rounded mx-10% bg-blue-500"
-              />
-            </div>
-          );
-        })}
+      {vocabList.map((set) => (
+        <VocabSetCard
+          key={set.key}
+          vocabSet={set}
+          onEditClick={() => handleEditClick(set.key)}
+          onDeleteClick={() => handleDeleteClick(set.key)}
+        />
+      ))}
+      {selectedSet && (
+        <EditVocabSetForm
+          selectedSet={selectedSet}
+          handleInputChange={handleInputChange}
+          handleSaveClick={handleSaveClick}
+          handleCancelClick={() => setSelectedSet(null)}
+        />
+      )}
     </div>
   );
 };
 
-export default edit;
+export default Edit;
