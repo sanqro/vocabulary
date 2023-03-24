@@ -354,3 +354,5 @@ NOK = Dieses Testfall konnte nicht (erfolgreich) getestet werden.
 Es müssen noch einige Anforderungen fertig implementiert werden, bevor das Programm abgegeben werden kann.
 
 ## Projektauswertung
+
+Am Anfang des Projektes haben wir etwas länger für das Informieren gebraucht, aber wir waren noch im Rahmen der geplanten Zeit. Für einen aus unserer Gruppe war Typescript neu, darum hat es am Anfang etwas länger gebraucht, aber als er einam das Grundprinzip verstanden hat ging es gut. Wir haben die Aufgaben so aufgeteilt, dass der Erfahrene zuerst das Backend macht und der Neue macht zuerst das Frontend. Als das Backend fertig war haben wir beide am Frontend gearbeitet und konnten uns so besser austauschen. Das Erstellen von der Dokumentation ging am Anfang sehr gut, da wir wussten was wir haben wollen und mit welcher Technologie, aber am Schluss ging es nicht so gut voran, da wir nicht so gut konzentriert waren und uns viel ablenken lassen habe.
