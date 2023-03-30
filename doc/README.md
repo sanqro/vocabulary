@@ -87,7 +87,11 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 
 - [Deta Dokumenation](https://deta.space/docs/en/introduction/start)
 - [Starter template for a Deta project using Node, Express and Typescript](https://github.com/BogDAAAMN/deta-typescript-express-starter)
-- [Chat App](https://github.com/sanqro/chat)
+- [Chat App](https://github.com/sanqro/chat) (Teilweise Logik und Middleware von diesem Projekt)
+- [Deta Dokumentation zur Migration](https://deta.space/migration/guides/migrate-a-micro#modifying-your-source-code)
+- [Typescript Hooks erklärt](https://www.youtube.com/watch?v=TNhaISOUy6Q)
+- [Arrays mappen erklärt](https://www.youtube.com/watch?v=GmuSz6wGW2E)
+- [Typescript Crash Course](https://www.youtube.com/watch?v=kq6IhAZVNh8)
 
 ## Lokale Entwicklungsumgebung
 
