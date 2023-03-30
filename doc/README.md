@@ -86,6 +86,8 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 ## Quellen
 
 - [Deta Dokumenation](https://deta.space/docs/en/introduction/start)
+- [Starter template for a Deta project using Node, Express and Typescript](https://github.com/BogDAAAMN/deta-typescript-express-starter)
+- [Chat App](https://github.com/sanqro/chat)
 
 ## Lokale Entwicklungsumgebung
 
