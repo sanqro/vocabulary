@@ -20,7 +20,7 @@
     - [Dependencies mit NPM installieren](#dependencies-mit-npm-installieren)
     - [Lokale Server starten](#lokale-server-starten)
     - [Frontend starten](#frontend-starten)
-    - [Optional: Backend starten](#Optional:-Backend-starten)
+    - [Optional: Backend starten](#optional-backend-starten)
   - [Anforderungen](#anforderungen)
   - [Arbeitspakete](#arbeitspakete)
   - [Ausführung](#ausführung)
