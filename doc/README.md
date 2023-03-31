@@ -75,7 +75,7 @@ Die Seite ist unter folgender Adresse erreichbar:
 
 Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschieden die folgenden Technologien zu verwenden:
 
-- [NodeJS](https://nodejjs.org/en/about/)
+- [NodeJS](https://nodejs.org/en/about)
 - [Express](https://expressjs.com/de/)
 - [React](https://reactjs.org)
 - [TypeScript(tsx)](https://www.typescriptlang.org)
