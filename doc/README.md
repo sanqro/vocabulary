@@ -79,7 +79,7 @@ Um unsere Vocabulary Webapplication zu realisieren haben wir uns dazu entschiede
 - [Express](https://expressjs.com/de/)
 - [React](https://reactjs.org)
 - [TypeScript(tsx)](https://www.typescriptlang.org)
-- [Deta](https://deta.space/
+- [Deta](https://deta.space/)
 - [Github mit Workflows](https://docs.github.com/en/actions/using-workflows)
 - [Netlify](https://www.netlify.com/)
 
