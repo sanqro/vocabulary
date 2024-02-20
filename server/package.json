@@ -13,8 +13,8 @@
   "dependencies": {
     "argon2": "^0.31.2",
     "cors": "^2.8.5",
-    "deta": "^1.2.0",
-    "dotenv": "^16.0.3",
+    "deta": "^1.1.0",
+    "dotenv": "^16.4.1",
     "express": "^4.18.1",
     "jsonwebtoken": "^9.0.2"
   },
